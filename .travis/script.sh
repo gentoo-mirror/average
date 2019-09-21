@@ -20,8 +20,6 @@ chmod a+rwx spinner.sh
 
 # grab repositories we depend on
 pushd /var/db/repos || exit
-git clone --depth=1 https://github.com/aballier/ml-overlay.git
-sudo chmod a+rwX ml-overlay
 
 git clone --depth=1 https://github.com/gentoo-mirror/graaff.git
 sudo chmod a+rwX graaff
