@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>anaveragehuman@icurse.nl</email>
+    </maintainer>
+    <longdescription>Black is the uncompromising Python code formatter. By using
+        it, you agree to cede control over minutiae of hand-formatting. In
+        return, Black gives you speed, determinism, and freedom from pycodestyle
+        nagging about formatting. You will save time and mental energy for more
+        important matters.</longdescription>
+    <upstream>
+        <remote-id type="github">psf/black</remote-id>
+        <remote-id type="pypi">zope.i18nmessageid</remote-id>
+    </upstream>
+</pkgmetadata>
