@@ -4,6 +4,7 @@ dev-java/gluegen 2.3.2: Automatically generate the JNI code necessary to call C 
 dev-java/jogl 2.3.2: Java(TM) Binding fot the OpenGL(TM) API
 dev-libs/opencl-clang 9.0.0: OpenCL-oriented thin wrapper library around clang
 dev-python/bashlex 0.12: Python parser for bash
+dev-python/black 19.10b_p0: The uncompromising Python code formatter
 dev-python/gmusicapi 11.1.1: An unofficial api for Google Play Music
 dev-python/gpsoauth 0.4.1: A python client library for Google Play Services OAuth
 dev-python/proboscis 1.2.6.0-r1: Extends Nose with certain TestNG like features
@@ -13,6 +14,7 @@ dev-ruby/markdownlint 0.8.0: A tool to check markdown files and flag style issue
 dev-util/boomerang 0.5.1: A general, open source, retargetable decompiler of machine code programs
 dev-util/compiledb 0.9.8: Generate Clang's JSON Compilation Database files for make-based build systems
 dev-util/spirv-llvm-translator 9.0.0.1: Bi-directional translator between SPIR-V and LLVM IR
+media-gfx/pngout-bin 20200115: PNGOUT optimizes the size of .PNG files losslessly.
 media-gfx/processing-bin 3.5.2: Visual context programming language
 media-plugins/ashuffle 1.1.0: Automatic library-wide shuffle for mpd
 media-plugins/mopidy-gmusic 3.0.0: Google Play Music extension for Mopidy

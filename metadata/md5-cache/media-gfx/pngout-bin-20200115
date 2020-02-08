@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=PNGOUT optimizes the size of .PNG files losslessly.
+EAPI=7
+HOMEPAGE=https://www.jonof.id.au/kenutils.html
+KEYWORDS=~amd64 ~arm ~arm64 ~x86
+LICENSE=pngout
+RESTRICT=bindist
+SLOT=0
+SRC_URI=https://www.jonof.id.au/files/kenutils/pngout-20200115-linux.tar.gz
+_eclasses_=unpacker	3cd8bad0d31e525cd26be1bfa4e61631
+_md5_=7d0138330027a94025555991a5813909
