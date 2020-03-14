@@ -1,8 +1,8 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-USE_RUBY=( ruby2{4,5} )
+USE_RUBY=( ruby2{4,5,6} )
 
 RUBY_FAKEGEM_EXTRADOC="README.md CHANGELOG.md"
 RUBY_FAKEGEM_GEMSPEC="mdl.gemspec"
@@ -17,10 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RESTRICT="mirror"
-
 ruby_add_rdepend "
 	>=dev-ruby/kramdown-2.0
+	dev-ruby/kramdown-parser-gfm
 	>=dev-ruby/mixlib-config-2.2.1
 	>=dev-ruby/mixlib-cli-2.1.1
 "
