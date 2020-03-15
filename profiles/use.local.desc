@@ -3,4 +3,3 @@
 # * generated automatically using pmaint *
 
 dev-java/jogl:cg - Enable NVidia Cg binding.
-dev-util/spirv-llvm-translator:tools - Install the command-line translator llvm-spirv
