@@ -4,7 +4,7 @@ set -uxo pipefail
 case $1 in
     pkgcheck)
         # run repoman checks
-        pkgcheck scan
+        pkgcheck scan --commits --jobs="$(nproc)"
         ;;
 
     shellcheck)

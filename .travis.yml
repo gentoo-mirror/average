@@ -42,12 +42,15 @@ script:
   - .travis/script.sh $ACTION
   - python3 .travis/genlist.py
 
+before_deploy:
+  - pip install "https://codeload.github.com/gentoo/portage/tar.gz/master"
+
 deploy:
   - provider: pages
     edge: true
     keep_history: false
     target_branch: travis-artifacts
-    github_token: $GITHUB_TOKEN
+    token: $GITHUB_TOKEN
     on:
       branch: master
       condition: $ACTION = pkgcheck
