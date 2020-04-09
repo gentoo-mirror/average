@@ -4,7 +4,8 @@ set -uxo pipefail
 case $1 in
     pkgcheck)
         # run repoman checks
-        pkgcheck scan --commits --jobs="$(nproc)"
+        pkgcheck scan --color=true --jobs="$(nproc)" | tee pkgcheck.out
+        [ "$(wc -c pkgcheck.out | cut -f1 -d' ')" -gt 0 ] && exit 1
         ;;
 
     shellcheck)

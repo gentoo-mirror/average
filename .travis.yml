@@ -31,19 +31,19 @@ install:
   - pip install jinja2 lxml pkgcheck pyyaml
 
 before_script:
-  - sudo mkdir -p /etc/portage /var/cache/distfiles /var/db/repos/gentoo
-  - sudo chmod a+rwX /etc/portage /var/cache/distfiles /var/db/repos/gentoo
+  - sudo mkdir -p /etc/portage /var/cache/distfiles /var/db/repos/gentoo /var/db/repos/graaff
+  - sudo chmod a+rwX /etc/portage /var/cache/distfiles /var/db/repos/gentoo /var/db/repos/graaff
   - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /var/cache/distfiles/metadata.dtd
   - curl -s "https://codeload.github.com/gentoo-mirror/gentoo/tar.gz/master" | tar xz -C /var/db/repos/gentoo --strip-components=1
-  - curl -s "https://codeload.github.com/gentoo-mirror/graaff/tar.gz/master" | tar xz -C /var/db/repos/gentoo --strip-components=1
+  - curl -s "https://codeload.github.com/gentoo-mirror/graaff/tar.gz/master" | tar xz -C /var/db/repos/graaff --strip-components=1
   - cp .travis/myrepos.conf /etc/portage/repos.conf
 
 script:
   - .travis/script.sh $ACTION
-  - python3 .travis/genlist.py
 
 before_deploy:
   - pip install "https://codeload.github.com/gentoo/portage/tar.gz/master"
+  - python3 .travis/genlist.py
 
 deploy:
   - provider: pages
