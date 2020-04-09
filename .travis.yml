@@ -1,11 +1,5 @@
-# run repoman
-
-sudo: false
 language: python
 cache: pip
-
-services:
-  - docker
 
 python:
   - 3.6
@@ -22,38 +16,41 @@ branches:
 
 matrix:
   fast_finish: true
+  allow_failures:
+    - env: ACTION=shellcheck
+
+env:
+  matrix:
+    - ACTION=pkgcheck
+    - ACTION=shellcheck
 
 before_cache:
     - rm -v -f ${HOME}/.cache/pip/log/debug.log
 
 install:
-  - pip install jinja2 lxml pyyaml
-  - docker pull asciidoctor/docker-asciidoctor
+  - pip install jinja2 lxml pkgcheck pyyaml
 
 before_script:
-  - sudo chmod a+rwX /etc/passwd /etc/group /etc /usr /var /var/cache
-  - echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false" >> /etc/passwd
-  - echo "portage::250:portage,travis" >> /etc/group
-
-  - mkdir -p "${HOME}/portage" /etc/portage /var/cache/distfiles /var/db/repos/gentoo
-  - sudo mkdir /usr/lib/portage
+  - sudo mkdir -p /etc/portage /var/cache/distfiles /var/db/repos/gentoo /var/db/repos/graaff
+  - sudo chmod a+rwX /etc/portage /var/cache/distfiles /var/db/repos/gentoo /var/db/repos/graaff
   - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /var/cache/distfiles/metadata.dtd
-
-  - ln -s /usr/portage/profiles/default/linux/amd64/17.0 /etc/portage/make.profile
+  - curl -s "https://codeload.github.com/gentoo-mirror/gentoo/tar.gz/master" | tar xz -C /var/db/repos/gentoo --strip-components=1
+  - curl -s "https://codeload.github.com/gentoo-mirror/graaff/tar.gz/master" | tar xz -C /var/db/repos/graaff --strip-components=1
+  - cp .travis/myrepos.conf /etc/portage/repos.conf
 
 script:
-  - .travis/script.sh
+  - .travis/script.sh $ACTION
+
+before_deploy:
+  - pip install "https://codeload.github.com/gentoo/portage/tar.gz/master"
   - python3 .travis/genlist.py
-  - docker run --rm -v $(pwd):/documents/ asciidoctor/docker-asciidoctor asciidoctor-pdf *.adoc
 
-after_script:
-  - git config user.name "Deployment Bot (from Travis CI)"
-  - git config user.email "deploy@travis-ci.org"
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GITHUB_TOKEN}:@github.com" > .git/credentials
-  - git branch -D travis-artifacts
-  - git checkout --orphan travis-artifacts
-  - git add .
-  - git commit -m "Deploy build ${TRAVIS_BUILD_NUMBER}"
-  - git push --force --set-upstream origin travis-artifacts
-
+deploy:
+  - provider: pages
+    edge: true
+    keep_history: false
+    target_branch: travis-artifacts
+    token: $GITHUB_TOKEN
+    on:
+      branch: master
+      condition: $ACTION = pkgcheck
