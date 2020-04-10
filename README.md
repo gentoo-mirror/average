@@ -40,8 +40,7 @@ layman -s average
 ## Packages
 
 See the automatically generated package table in
-[Packages.adoc](../travis-artifacts/Packages.adoc) or
-[Packages.pdf](../travis-artifacts/Packages.pdf)
+[Packages.adoc](../travis-artifacts/Packages.adoc)
 for a complete listing.
 
 The following packages require extra explanation:
