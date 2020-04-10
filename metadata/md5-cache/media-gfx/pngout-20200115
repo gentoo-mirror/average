@@ -8,4 +8,4 @@ RESTRICT=bindist
 SLOT=0
 SRC_URI=https://www.jonof.id.au/files/kenutils/pngout-20200115-linux.tar.gz
 _eclasses_=unpacker	3cd8bad0d31e525cd26be1bfa4e61631
-_md5_=7d0138330027a94025555991a5813909
+_md5_=a0481bb75d48c0ec9e672b11099fe5b3
