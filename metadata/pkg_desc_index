@@ -1,6 +1,7 @@
 app-misc/hyperfine 1.9.0: A command-line benchmarking tool
 dev-java/gluegen 2.3.2: Automatically generate the JNI code necessary to call C libraries
 dev-java/jogl 2.3.2: Java(TM) Binding fot the OpenGL(TM) API
+dev-libs/opencl-clang 10.0.0.1: OpenCL-oriented thin wrapper library around clang
 dev-python/bashlex 0.14: Python parser for bash
 dev-python/black 19.10b_p0: The uncompromising Python code formatter
 dev-python/gpsoauth 0.4.1: A python client library for Google Play Services OAuth
@@ -10,6 +11,8 @@ dev-ruby/kramdown-parser-gfm 1.1.0: A kramdown parser for the GFM dialect of Mar
 dev-ruby/markdownlint 0.9.0: A tool to check markdown files and flag style issues.
 dev-util/boomerang 0.5.1: A general, open source, retargetable decompiler of machine code programs
 dev-util/compiledb 0.10.1: Generate Clang's JSON Compilation Database files for make-based build systems
+dev-util/intel-graphics-compiler 1.0.3771: LLVM-based OpenCL compiler targetting Intel Gen graphics hardware
+dev-util/spirv-llvm-translator 10.0.0: Bi-directional translator between SPIR-V and LLVM IR
 media-gfx/pngout 20200115: PNGOUT optimizes the size of .PNG files losslessly.
 media-gfx/processing-bin 3.5.2: Visual context programming language
 net-misc/postman-bin 7.0.7: Supercharge your API workflow
