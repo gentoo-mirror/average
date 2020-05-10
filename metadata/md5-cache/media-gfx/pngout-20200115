@@ -7,5 +7,5 @@ LICENSE=pngout
 RESTRICT=bindist
 SLOT=0
 SRC_URI=https://www.jonof.id.au/files/kenutils/pngout-20200115-linux.tar.gz
-_eclasses_=unpacker	3cd8bad0d31e525cd26be1bfa4e61631
+_eclasses_=unpacker	b5891c9326ad2e7905c011d44c927c34
 _md5_=a0481bb75d48c0ec9e672b11099fe5b3
