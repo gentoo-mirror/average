@@ -16,3 +16,5 @@ dev-util/spirv-llvm-translator 10.0.0: Bi-directional translator between SPIR-V 
 media-gfx/pngout 20200115: PNGOUT optimizes the size of .PNG files losslessly.
 media-gfx/processing-bin 3.5.2: Visual context programming language
 net-misc/postman-bin 7.0.7: Supercharge your API workflow
+sys-boot/ifr-extractor 0.3.6: Extract internal representation from EFI and UEFI drivers/applications
+sys-boot/uefitool 0.28.0: C++/Qt program for parsing, extracting and modifying UEFI firmware images
