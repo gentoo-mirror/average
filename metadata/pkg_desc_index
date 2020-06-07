@@ -18,3 +18,4 @@ media-gfx/processing-bin 3.5.2: Visual context programming language
 net-misc/postman-bin 7.0.7: Supercharge your API workflow
 sys-boot/ifr-extractor 0.3.6: Extract internal representation from EFI and UEFI drivers/applications
 sys-boot/uefitool 0.28.0: C++/Qt program for parsing, extracting and modifying UEFI firmware images
+sys-power/power-calibrate 0.01.21: processor power calibration tool

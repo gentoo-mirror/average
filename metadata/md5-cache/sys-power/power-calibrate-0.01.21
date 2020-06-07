@@ -1,0 +1,9 @@
+DEFINED_PHASES=prepare
+DESCRIPTION=processor power calibration tool
+EAPI=7
+HOMEPAGE=https://launchpad.net/power-calibrate
+KEYWORDS=~amd64
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/power-calibrate/0.01.21-1/power-calibrate_0.01.21.orig.tar.gz
+_md5_=862ccfd08d3fbeab0717312e6273f470
