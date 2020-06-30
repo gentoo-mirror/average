@@ -42,10 +42,3 @@ layman -s average
 See the automatically generated package table in
 [Packages.adoc](../travis-artifacts/Packages.adoc)
 for a complete listing.
-
-The following packages require extra explanation:
-
-### dev-embedded
-
-**arduino-libs**: Adds libraries and hardware as specified in the
-[ADK documentation](https://developer.android.com/adk/adk.html). Never tested.
