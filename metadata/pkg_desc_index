@@ -1,4 +1,3 @@
-app-misc/hyperfine 1.9.0: A command-line benchmarking tool
 dev-java/gluegen 2.3.2: Automatically generate the JNI code necessary to call C libraries
 dev-java/jogl 2.3.2: Java(TM) Binding fot the OpenGL(TM) API
 dev-python/bashlex 0.14: Python parser for bash
