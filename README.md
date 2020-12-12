@@ -1,5 +1,5 @@
 # average
-[![Build Status](https://travis-ci.com/AnAverageHuman/average.svg?branch=master)](https://travis-ci.com/AnAverageHuman/average)
+![CI](https://github.com/AnAverageHuman/average/workflows/CI/badge.svg)
 
 Personal overlay for Gentoo packages. Changes often due to patches making it
 into the main tree. See branches for unfinished projects.
@@ -7,7 +7,7 @@ into the main tree. See branches for unfinished projects.
 ## Installation/Usage
 
 Repositories considered "masters" of this one are not necessary for most of the
-packages here.  If the build is passing on Travis but `emerge` fails to resolve
+packages here.  If the build is passing in CI but `emerge` fails to resolve
 dependencies, you're probably missing one or more of the "master" repositories
 and should add it to your system.
 
@@ -40,5 +40,5 @@ layman -s average
 ## Packages
 
 See the automatically generated package table in
-[Packages.adoc](../travis-artifacts/Packages.adoc)
+[Packages.adoc](../ci-artifacts/Packages.adoc)
 for a complete listing.
