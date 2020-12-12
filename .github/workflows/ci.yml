@@ -2,10 +2,6 @@ name: CI
 
 on: [push, pull_request]
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   repoman:
     runs-on: ubuntu-latest
@@ -16,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v2
-        - uses: ludeeus/action-shellcheck@v1.0.0
+        - uses: ludeeus/action-shellcheck@1.0.0
           env:
             # unused variables
             SHELLCHECK_OPTS: -e SC2034
@@ -24,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pip install https://github.com/gentoo/portage/archive/master.zip
+        env:
+          SHELL: bash
       - run: python .travis/genlist.py
       - uses: peaceiris/actions-gh-pages@v3
         with:
