@@ -12,7 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v2
+        - id: findfiles
+          shell: bash
+          run: |
+            shopt -s globstar nullglob
+            echo "::set-output name=filepaths::eclass/*.eclass ./**/*.ebuild"
         - uses: ludeeus/action-shellcheck@1.0.0
+          with:
+            additional_files: ${{ steps.findfiles.outputs.filepaths }}
           env:
             # unused variables
             SHELLCHECK_OPTS: -e SC2034
@@ -27,6 +34,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.GITHUB_WORKSPACE }}
-          publish_branch: travis-artifacts
+          publish_branch: ci-artifacts
           keep_files: true
           force_orphan: true
