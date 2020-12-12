@@ -16,7 +16,8 @@ jobs:
           shell: bash
           run: |
             shopt -s globstar nullglob
-            echo "::set-output name=filepaths::eclass/*.eclass ./**/*.ebuild"
+            files=(eclass/*.eclass ./**/*.ebuild)
+            echo "::set-output name=filepaths::${files[@]}"
         - uses: ludeeus/action-shellcheck@1.0.0
           with:
             additional_files: ${{ steps.findfiles.outputs.filepaths }}
