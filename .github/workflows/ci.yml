@@ -1,0 +1,40 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  repoman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: lucianposton/repoman-ebuild-qa-action@v1
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+        - id: findfiles
+          shell: bash
+          run: |
+            shopt -s globstar nullglob
+            files=(eclass/*.eclass ./**/*.ebuild)
+            echo "::set-output name=filepaths::${files[@]}"
+        - uses: ludeeus/action-shellcheck@1.0.0
+          with:
+            additional_files: ${{ steps.findfiles.outputs.filepaths }}
+          env:
+            # unused variables
+            SHELLCHECK_OPTS: -e SC2034
+  packagelist:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install https://github.com/gentoo/portage/archive/master.zip
+        env:
+          SHELL: bash
+      - run: python .travis/genlist.py
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.GITHUB_WORKSPACE }}
+          publish_branch: ci-artifacts
+          keep_files: true
+          force_orphan: true
