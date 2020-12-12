@@ -1,0 +1,34 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  repoman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: lucianposton/repoman-ebuild-qa-action@v1
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run shellcheck on ebuilds and eclasses
+        shell: bash
+        # SC2034: unused variables
+        run: |
+          shopt -s globstar nullglob
+          shellcheck --shell=bash -e SC2034 eclass/*.eclass ./**/*.ebuild
+  packagelist:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install https://github.com/gentoo/portage/archive/master.zip
+        env:
+          SHELL: bash
+      - run: python .travis/genlist.py
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.GITHUB_WORKSPACE }}
+          publish_branch: ci-artifacts
+          keep_files: true
+          force_orphan: true
