@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>anaveragehuman@icurse.nl</email>
+    </maintainer>
+    <longdescription>
+        git absorb will automatically identify which commits are safe to modify,
+        and which indexed changes belong to each of those commits. It will then
+        write fixup! commits for each of those changes.
+    </longdescription>
+    <upstream>
+        <remote-id type="github">tummychow/git-absorb</remote-id>
+    </upstream>
+</pkgmetadata>
