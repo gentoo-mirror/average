@@ -12,18 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v2
-        - id: findfiles
-          shell: bash
+        - shell: bash
+          # SC2034: unused variables
           run: |
             shopt -s globstar nullglob
-            files=(eclass/*.eclass ./**/*.ebuild)
-            echo "::set-output name=filepaths::${files[@]}"
-        - uses: ludeeus/action-shellcheck@1.0.0
-          with:
-            additional_files: ${{ steps.findfiles.outputs.filepaths }}
-          env:
-            # unused variables
-            SHELLCHECK_OPTS: -e SC2034
+            shellcheck --shell=bash -e SC2034 eclass/*.eclass ./**/*.ebuild
   packagelist:
     runs-on: ubuntu-latest
     steps:
