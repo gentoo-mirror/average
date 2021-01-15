@@ -4,7 +4,6 @@ dev-python/bashlex 0.14: Python parser for bash
 dev-python/proboscis 1.2.6.0-r1: Extends Nose with certain TestNG like features
 dev-python/validictory 1.1.2: General purpose python data validator
 dev-util/boomerang 0.5.1: A general, open source, retargetable decompiler of machine code programs
-dev-util/compiledb 0.10.1: Generate Clang's JSON Compilation Database files for make-based build systems
 dev-util/spirv-llvm-translator 10.0.0: Bi-directional translator between SPIR-V and LLVM IR
 dev-vcs/git-absorb 0.6.6: git commit --fixup, but automatic
 media-gfx/pngout 20200115: PNGOUT optimizes the size of .PNG files losslessly.
