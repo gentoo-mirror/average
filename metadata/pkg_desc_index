@@ -1,6 +1,5 @@
 dev-java/gluegen 2.3.2: Automatically generate the JNI code necessary to call C libraries
 dev-java/jogl 2.3.2: Java(TM) Binding fot the OpenGL(TM) API
-dev-python/bashlex 0.14: Python parser for bash
 dev-python/proboscis 1.2.6.0-r1: Extends Nose with certain TestNG like features
 dev-python/validictory 1.1.2: General purpose python data validator
 dev-util/boomerang 0.5.1: A general, open source, retargetable decompiler of machine code programs
