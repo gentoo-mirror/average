@@ -8,6 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: lucianposton/repoman-ebuild-qa-action@v1
+  pkgcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pkgcore/pkgcheck-action@v1
   shellcheck:
     runs-on: ubuntu-latest
     steps:
