@@ -1,3 +1,5 @@
+dev-lang/dart-bin 2.13.4: A client-optimized langauge for fast apps on any platform
+dev-lang/flutter 2.2.2: A client-optimized langauge for fast apps on any platform
 dev-util/boomerang 0.5.1: A general, open source, retargetable decompiler of machine code programs
 dev-util/spirv-llvm-translator 10.0.0: Bi-directional translator between SPIR-V and LLVM IR
 dev-vcs/git-absorb 0.6.6: git commit --fixup, but automatic
