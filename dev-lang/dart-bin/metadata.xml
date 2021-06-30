@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>anaveragehuman@icurse.nl</email>
+		<name>Jeffrey Lin</name>
+	</maintainer>
+	<longdescription lang="en">
+Dart is a client-optimized language for developing fast apps on any platform.
+Its goal is to offer the most productive programming language for multi-platform
+development, paired with a flexible execution runtime platform for app
+frameworks.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">dart-lang/sdk</remote-id>
+	</upstream>
+</pkgmetadata>

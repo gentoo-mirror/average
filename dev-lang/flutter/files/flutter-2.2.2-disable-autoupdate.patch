@@ -1,0 +1,56 @@
+diff --git c/bin/internal/shared.sh i/bin/internal/shared.sh
+index be9320210e..6d75d6f072 100644
+--- c/bin/internal/shared.sh
++++ i/bin/internal/shared.sh
+@@ -198,28 +198,11 @@ function shared::execute() {
+     >&2 echo "📎"
+   fi
+ 
+-  # Test if Git is available on the Host
+-  if ! hash git 2>/dev/null; then
+-    >&2 echo "Error: Unable to find git in your PATH."
+-    exit 1
+-  fi
+-  # Test if the flutter directory is a git clone (otherwise git rev-parse HEAD
+-  # would fail)
+-  if [[ ! -e "$FLUTTER_ROOT/.git" ]]; then
+-    >&2 echo "Error: The Flutter directory is not a clone of the GitHub project."
+-    >&2 echo "       The flutter tool requires Git in order to operate properly;"
+-    >&2 echo "       to install Flutter, see the instructions at:"
+-    >&2 echo "       https://flutter.dev/get-started"
+-    exit 1
+-  fi
+-
+   # To debug the tool, you can uncomment the following lines to enable checked
+   # mode and set an observatory port:
+   # FLUTTER_TOOL_ARGS="--enable-asserts $FLUTTER_TOOL_ARGS"
+   # FLUTTER_TOOL_ARGS="$FLUTTER_TOOL_ARGS --observe=65432"
+ 
+-  upgrade_flutter 7< "$PROG_NAME"
+-
+   BIN_NAME="$(basename "$PROG_NAME")"
+   case "$BIN_NAME" in
+     flutter*)
+diff --git c/packages/flutter_tools/lib/src/runner/flutter_command_runner.dart i/packages/flutter_tools/lib/src/runner/flutter_command_runner.dart
+index 550a75bc65..c98a4591cc 100644
+--- c/packages/flutter_tools/lib/src/runner/flutter_command_runner.dart
++++ i/packages/flutter_tools/lib/src/runner/flutter_command_runner.dart
+@@ -244,7 +244,6 @@ class FlutterCommandRunner extends CommandRunner<void> {
+           globals.flutterUsage.suppressAnalytics = true;
+         }
+ 
+-        globals.flutterVersion.ensureVersionFile();
+         final bool machineFlag = topLevelResults['machine'] as bool;
+         final bool ci = await globals.botDetector.isRunningOnBot;
+         final bool redirectedCompletion = !globals.stdio.hasTerminal &&
+@@ -253,10 +252,6 @@ class FlutterCommandRunner extends CommandRunner<void> {
+         final bool versionCheckFlag = topLevelResults['version-check'] as bool;
+         final bool explicitVersionCheckPassed = topLevelResults.wasParsed('version-check') && versionCheckFlag;
+ 
+-        if (topLevelResults.command?.name != 'upgrade' &&
+-            (explicitVersionCheckPassed || (versionCheckFlag && !isMachine))) {
+-          await globals.flutterVersion.checkFlutterVersionFreshness();
+-        }
+ 
+         // See if the user specified a specific device.
+         globals.deviceManager.specifiedDeviceId = topLevelResults['device-id'] as String;
