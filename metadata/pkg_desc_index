@@ -1,6 +1,5 @@
 dev-lang/dart-bin 2.13.4: A client-optimized langauge for fast apps on any platform
 dev-lang/flutter 2.2.2: A client-optimized langauge for fast apps on any platform
-dev-vcs/git-absorb 0.6.6: git commit --fixup, but automatic
 media-gfx/pngout 20200115: PNGOUT optimizes the size of .PNG files losslessly.
 media-gfx/processing-bin 3.5.2: Visual context programming language
 net-misc/postman-bin 7.0.7: Supercharge your API workflow
